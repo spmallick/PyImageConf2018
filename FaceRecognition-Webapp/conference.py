@@ -2,14 +2,14 @@ import flask
 import flask_restful as rest
 import werkzeug.routing
 import DnnRecognizer
-import DlibRecognizer
+#import DlibRecognizer
 import base64
 
 class ConferenceApplication(flask.Flask):
     def __init__(self,name):
         super(ConferenceApplication,self).__init__(name)
-        #self.recognizer = DnnRecognizer.DnnRecognizer()
-        self.recognizer = DlibRecognizer.DlibRecognizer()
+        self.recognizer = DnnRecognizer.DnnRecognizer()
+        #self.recognizer = DlibRecognizer.DlibRecognizer()
 
 application = ConferenceApplication(__name__)
 

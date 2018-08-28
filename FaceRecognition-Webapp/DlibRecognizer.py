@@ -18,11 +18,9 @@ class DlibRecognizer():
         best_match_name = 'unknown'
         best_match_score = 0.36
         for name, descriptor in self.known_faces.items():
-            score = sum((i - j)*(i - j) for i, j in zip(vec, descriptor))
-            print(score)
-            if (score < best_match_score):
-                best_match_score = score
-                best_match_name = name
+            # code goes here
+            best_match_name = 'unknown'
+            
         return best_match_name
 
     def _face2vec(self, imageBuffer):
