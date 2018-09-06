@@ -4,6 +4,7 @@ import werkzeug.routing
 import DnnRecognizer
 #import DlibRecognizer
 import base64
+from flask_cors import CORS
 
 class ConferenceApplication(flask.Flask):
     def __init__(self,name):
@@ -12,6 +13,7 @@ class ConferenceApplication(flask.Flask):
         #self.recognizer = DlibRecognizer.DlibRecognizer()
 
 application = ConferenceApplication(__name__)
+CORS(application)
 
 application.debug = True
 
